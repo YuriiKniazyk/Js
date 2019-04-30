@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+                console.log('Task1_sort-bubblle')
+
+    let a = Number(prompt('Enter the first number: '));
+    let b = Number(prompt('Enter the second number: '));
+    let c = Number(prompt('Enter the another number: '));
+    let arr = [a,b,c]; console.log(arr);
+    let i = 0;
+    
+    for ( i = 0, endI = arr.length; i < endI; i++) {
+        for (let j = 0, endJ = endI - i; j < endJ; j++) {
+            if (arr[j] > arr[j + 1]) {
+                let swap = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = swap;
+            }
+        }
+        console.log(arr[i]);
+    }
+   
+
+                    console.log('Task2: traffic light')
+
+    let color = prompt('Enter the color of the traffic light: ');
+
+    switch(color) {
+        case 'green': {
+            console.log('go');
+            break;
+        }
+        case 'red': {
+            console.log('stop');
+            break;
+        }
+        case 'yellow': {
+            console.log('wait');
+            break;
+        }
+        case 'no work': {
+            console.log('do what you want');
+        }
+        default:{
+            console.log('you entered the wrong color');
+        }
+    }
+    
+                    console.log('Task3: traffic light + isRoadClear');
+
+    let  isRoadClear = prompt('Enter isRoadClear (yes or no): ');
+
+    if (color === 'green' && isRoadClear === 'yes'){
+        console.log('go');
+    }
+    if (color === 'green' && isRoadClear === 'no') {
+        console.log('Wait until the offenders pass');
+    }
+    if (color === 'yellow' && isRoadClear === 'no') {
+        console.log('Whait');
+    }
+    if (color === 'yellow' && isRoadClear === 'yes') {
+        console.log('Whait');
+    }
+    if (color === 'red' && isRoadClear === 'yes') {
+        console.log('STOP');
+    }
+    if (color === 'red' && isRoadClear === 'no') {
+        console.log('STOP & WHAIT');
+    }
+    if (color === 'no work') {
+        console.log('do what you want');
+    } 
+        else 
+        
+    { console.log('you entered the wrong color');}
+
+</script>

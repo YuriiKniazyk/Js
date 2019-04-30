@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let man = function(){
+        console.log('special tost');
+    };
+
+    function back(){
+        console.log('backfunction');
+    }
+
+    function back1(){
+        console.log('backfunction1');
+    }
+
+    function main(call){
+        console.log('mainfunction');
+        call();
+    }
+
+    main(back);
+    main(back1);
+    main(man);
+    
+
+
+</script>

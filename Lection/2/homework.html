@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let a = Number(prompt('Enter the number 1: ')); console.log('a:', a);
+    let b = Number(prompt('Enter the number 2: ')); console.log('b:', b);
+    let c = Number(prompt('Enter the number 3: ')); console.log('c:', c);
+    
+            
+    function mini(a,b,c) {
+        let min = 0;
+        if(a < b && a < c) {
+            min = a;
+        }
+        if(b < c && b < a) {
+            min = b;
+        }
+        if(c < a && c < b){
+            min = c;
+        }
+        console.log('min:', min);
+        return min;
+    }
+    mini(a,b,c);
+
+
+    function maxi(a,b,c) {
+        let max = 0;
+        if(a > b && a > c) {
+            max = a;
+        }
+        if(b > c && b > a) {
+            max = b;
+        } else { max = c;}
+        // if(c < a && c < b){
+        //     min = c;
+        // }
+        console.log('max:', max);
+        return max;
+    }
+    maxi(a,b,c);
+
+
+
+
+
+    function maxmin() {
+    
+    let minini = Math.min(...arguments);
+    let maxixi = Math.max(...arguments);
+
+    console.log(arguments);
+    console.log('min: ',minini);
+    console.log('max: ',maxixi);
+
+    return minini;
+    return maxixi;
+    }
+    maxmin(0, 23, 13, 4, 53, 69, 9);
+
+
+</script>

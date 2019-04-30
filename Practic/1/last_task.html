@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+                    console.log('Середній чек');
+        let masuv = [100,250,50,168,120,345,188];
+        let suma = 0;
+        let avg = 0;
+
+        for (let i = 0; i < masuv.length; i++) {
+            suma = (suma + masuv[i]);
+            avg = suma / masuv.length;
+        }
+        console.log(suma);
+        console.log(avg);
+
+
+                    console.log('Random array *5');
+        let count = Number(prompt('Enter the number of array: '));
+        let x = Number(prompt('Enter the number to start from: '));
+        let arr = [];
+        let arr1 = [];        
+        
+        while (arr.length < count) {
+            arr.push(x);
+            x--;
+        }
+        console.log(arr);
+        for (let j = 0; j < arr.length; j++){
+            arr1[j] = arr[j] * 5;
+            console.log(arr1[j]);
+        }
+        
+         
+                    console.log('Random array object');            
+        let arr2 = [];
+        let arr3 = [];
+    
+        for (let i = 0; i < count; i++) {
+            arr2[i] = Number(prompt('Enter the arrey: '));
+        }
+        console.log(arr2); 
+
+        for (let i = 0; i < arr2.length; i++) {
+            let tmp = arr2[i];
+            if (typeof tmp === 'number')
+            for (let j = 0; j < arr2.length; j++){
+            arr3[j] = tmp;
+            console.log(arr3[j]);
+            }
+        }
+        
+</script>

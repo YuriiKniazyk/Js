@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<script>
+                 console.log('Random array');
+        let count = Number(prompt('Enter the number of array: '));
+        let arr = [];
+        let x = Number(prompt('Enter the number to start from: '));;
+        
+         while (arr.length < count) {
+             //if ( x % 2 == 0)   //всі парні елементи
+             //if ( x % 2 !== 0)   //всі непарні елементи
+             arr.push(x);
+             x--;
+         }
+         console.log(arr);
+        
+    //             console.log('Random array Math()')
+    //     let min = Number(prompt('Enter the min number: '));
+    //     let max = Number(prompt('Enter the max number: '));
+    //     let y = Math.random() * (max - min) + min; 
+
+    // for (let i = 0; i < count; i++) {
+    //     arr[i] = y;
+    //     y++;
+    //     console.log(arr[i]);   
+    // }
+
+    //         console.log('Кожен третій елемент');
+    // for(let i = 2; i < count; i = i+3){
+    //     console.log(arr[i]);
+    // }
+
+    //             console.log('Кожен третій парний елемент');
+    // for(let i = 2; i < count; i = i+3){
+    //     if (arr[i] % 2 == 0){
+    //    console.log(arr[i]);}
+    // }
+    
+
+    
+    //             console.log('Кожен третій парний елемент в інший масив');
+    //
+    // let mas = [];
+    //
+    // for(let i = 2; i < count; i = i + 3){
+    //     if (arr[i] % 2 == 0)
+    //     mas.push(arr[i]); 
+    // }
+    // console.log(mas);
+
+    //              console.log('Сусідній з права елемент парний');
+
+    // for(let i = 0; i < count - 1; i++) {
+    //     if (arr[i+1] % 2 == 0) {
+    //         console.log(arr[i]);
+    //     }
+    // }
+        
+</script>

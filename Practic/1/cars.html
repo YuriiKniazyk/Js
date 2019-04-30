@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Practic Js</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //Avto
+    let avto1 = {
+        marka: 'reno',
+        dvuhyn: '2',
+        vlasnuk: 'Yurii',
+        price: 5000,
+        year: '2015'
+    };
+    let avto2 = {
+        marka: 'reno',
+        dvuhyn: '3',
+        vlasnuk: 'Harry',
+        price: 7000,
+        year: '2018'
+    };
+    let avto3 = {
+        marka: 'lada',
+        dvuhyn: '4',
+        vlasnuk: 'Yurii',
+        price: 1000,
+        year: '2002'
+    };
+    let avto4 = {
+        marka: 'reno',
+        dvuhyn: '10',
+        vlasnuk: 'Max',
+        price: 10000,
+        year: '2019'
+    };
+    let avto5 = {
+        marka: 'slavuta',
+        dvuhyn: '1',
+        vlasnuk: 'BIG',
+        price: 100,
+        year: '1990'
+    };
+    let avto6 = {
+        marka: 'nuva',
+        dvuhyn: '15',
+        vlasnuk: 'Serg',
+        price: 8000,
+        year: '2015'
+    };
+    let avto7 = {
+        marka: 'reno',
+        dvuhyn: '20',
+        vlasnuk: 'Mad',
+        price: 15000,
+        year: '2019'
+    };
+
+    let vlasnuk1 = {
+        name: 'Yurii',
+        age: '23',
+        stash: '5'
+    };
+
+    let vlasnuk2 = {
+        name: 'Max',
+        age: '29',
+        stash: '15'
+    };
+
+    let vlasnuk3 = {
+        name: 'Harry',
+        age: '20',
+        stash: '2'
+    };
+
+    let vlasnuk4 = {
+        name: 'Yurii',
+        age: '35',
+        stash: '10'
+    };
+
+    let vlasnuk5 = {
+        name: 'BIG',
+        age: '40',
+        stash: '4'
+    };
+
+    let vlasnuk6 = {
+        name: 'Serg',
+        age: '27',
+        stash: '5'
+    };
+
+    let vlasnuk7 = {
+        name: 'Mad',
+        age: '27',
+        stash: 1
+    };
+
+    avto1.dvuhyn = '2.5';
+    avto2.dvuhyn = '3.5';
+    avto3.dvuhyn = '4.5';
+    avto4.dvuhyn = '13';
+
+    vlasnuk1.name = 'Ron';
+    vlasnuk2.name = 'Bob';
+    vlasnuk3.name = 'Din';
+    vlasnuk4.name = 'Sam';
+
+    let car = [];
+    car[0] = avto1;
+    car[1] = avto2;
+    car[2] = avto3;
+    car[3] = avto4;
+    car[4] = avto5;
+    car[5] = avto6;
+    car[6] = avto7;
+
+    let driver = [];
+    driver[0] = vlasnuk1;
+    driver[1] = vlasnuk2;
+    driver[2] = vlasnuk3;
+    driver[3] = vlasnuk4;
+    driver[4] = vlasnuk5;
+    driver[5] = vlasnuk6;
+    driver[6] = vlasnuk7;
+
+
+    for(let i = 1; i < car.length; i = i+2){
+        car[i].dvuhyn *= 1.1;
+        car[i].price *= 1.05;
+        console.log(car[i]);
+    }
+
+    console.log('stah');
+
+    for(let i = 0; i < driver.length; i++){
+        if ( driver[i].stash < 5 && driver[i].age > 25 ){
+        driver[i].stash = driver[i].stash + 1;
+        }
+        console.log(driver[i]);
+    }
+
+    console.log('Suma_Avto');
+
+    let suma = 0;
+
+    for(let i = 0; i < car.length; i++){
+        suma = suma + car[i].price;
+    }
+    console.log(suma);
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+</script>
