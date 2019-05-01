@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class Figura {
+        constructor(name){
+            this.name = name;
+        }
+    };
+
+    class Square extends Figura{
+        constructor(name, height){
+            super(name);
+            this.height = height;
+        };
+
+        calcArea(){
+            return this.height * this.height;
+        };
+
+        get area(){
+            return this.calcArea();
+        };
+
+        set setHeight(value){
+            this.height = value;
+        };
+    };
+
+    let mySquare = new Square('My Square', 20);
+    console.log(mySquare);
+    console.log('SQR Square: ',mySquare.area);
+    mySquare.setHeight = 30;
+    console.log('SQR new Square: ',mySquare.area);
+
+    class Circle extends Figura{
+        constructor(name, border){
+            super(name);
+            this.border = border;
+        }
+
+        calcCircle(){
+            return Math.PI * this.border * this.border;
+        }
+
+        get area(){
+            return this.calcCircle();
+        }
+
+        set setBorder(value){
+            this.border = value;
+        }
+    };
+
+    let myCircle = new Circle('Circle', 10);
+    console.log(myCircle);
+    console.log('SQR Circle: ',myCircle.area);
+    myCircle.setBorder = 30;
+    console.log('SQR new Circle: ',myCircle.area);
+
+    
+</script>

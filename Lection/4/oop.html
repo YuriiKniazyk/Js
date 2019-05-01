@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    console.log('Task #1: ');
+    Array.prototype.output = function() {
+        console.log('array: ',this);
+    };
+
+    Array.prototype.pairelement = function() {
+        let arr = [];
+        for(let i = 0; i < this.length; i++){
+            if (this[i] % 2 === 0){
+                arr.push(this[i]);
+            }
+        }
+        console.log('pairelement: ', arr); 
+        return arr;
+    }; 
+
+    Array.prototype.pairindex = function() {
+        let arr = [];
+        for(let i = 0; i < this.length; i++){
+            if (i % 2 === 0){
+                arr.push(this[i]);
+            }
+        }
+        console.log('pairindex: ', arr); 
+        return arr;
+    }; 
+
+    //let ari = [2, 44, 67, 34, 45, 24, 88, 99, 67];
+
+    [2, 44, 67, 34, 45, 24, 88, 99, 67].output();
+    [2, 44, 67, 34, 45, 24, 88, 99, 67].pairelement();
+    [2, 44, 67, 34, 45, 24, 88, 99, 67].pairindex();
+
+
+    console.log('Task #2: ');
+    class Car {
+        constructor(name, year, power, price, owner){
+            this.name = name;
+            this.year = year;
+            this.power = power;
+            this.price = price;
+            this.owner = owner;
+        }
+            info(){
+                console.log(this);
+            }
+    };
+
+    let car1 = new Car('reno', 2015, 2.5, 1000000, 'Sasha');
+    console.log('car1: ',car1); 
+    let car2 = new Car('bingo', 2005, 2.5, 100000, 'Yurii');
+    console.log('car2: ',car2); 
+    let car3 = new Car('merc', 2065, 2.5, 100000, 'Frodo');
+    console.log('car3: ',car3); 
+    
+    console.log('Task #3: ');
+    class SuperCar extends Car {
+        constructor(name, year, power, price, owner, ownerLast, numberofdoors){
+            super(name, year, power, price, owner);
+            this.ownerLast = ownerLast;
+            this.numberofdoors = numberofdoors;
+        }
+            info(){
+                console.log(this);
+            }
+    };
+
+    let SuperCar1 = new SuperCar('reno', 2015, 2.5, 1000000, 'Sasha', 'Big', 4);
+    console.log('SuperCar1: ',SuperCar1);
+    let SuperCar2 = new SuperCar('bingo', 2005, 2.5, 100000, 'Yurii', 'Littlfot', 2);
+    console.log('SuperCar2: ',SuperCar2); 
+    let SuperCar3 = new SuperCar('merc', 2065, 2.5, 100000, 'Frodo', 'Begins', 5);
+    console.log('SuperCar3: ',SuperCar3); 
+    
+
+    console.log('Task #4: ');
+    class Mahaz {
+        constructor(nameM){
+            this.nameM = nameM;
+        }
+        info(){
+            console.log(this);
+        }
+    };
+
+    class Category extends Mahaz{
+        constructor(nameM, nameK){
+            super(nameM);
+            this.nameK = nameK;
+        }
+        info(){
+            console.log(this);
+        }
+    };
+    
+    class Product extends Category{
+        constructor(nameM, nameK, nameC){
+            super(nameM, nameK);
+            this.nameC = nameC;
+        }
+        info(){
+            console.log(this);
+        }
+    };
+
+    let abc = new Product('Silpo', 'MilkProduction', 'Milk');
+    console.log('Product: ',abc);
+
+
+    console.log('Task #5: ');
+    class LittleKing {
+        constructor(name, age, shoes){
+            this.name = name;
+            this.age = age;
+            this.shoes = shoes;
+        }
+        
+
+        searchZola(arr){
+            var shoes = this.shoes;
+            let filter = arr.filter(function(item){
+                return item.shoesSize === shoes;
+            });
+            return filter;
+        }
+    };
+
+    class Zola {
+        constructor(name, age, shoesSize){
+            this.name = name;
+            this.age = age;
+            this.shoesSize = shoesSize;
+        }
+    };
+
+    let princes = [new Zola('Alina', 22, 39), new Zola('Ira', 25, 38),
+                   new Zola('Alya', 22, 39), new Zola('Masha', 25, 40),
+                   new Zola('Katya', 21, 37), new Zola('Olya', 22, 39),
+                   new Zola('Galya', 24, 41), new Zola('Nastya', 27, 40),
+                   new Zola('Vika', 22, 40), new Zola('Nadya', 20, 39)];
+    
+    let prince = new LittleKing('Svyat', 25, 38);
+    console.log('Prince: ',prince);
+    
+    let ZolaLucky = prince.searchZola(princes);
+    console.log('ZolaLucky: ',ZolaLucky);
+    
+</script>
