@@ -1,0 +1,140 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    let aTag = {
+        titleOfTag: 'a',
+        action: "Тег <a> является одним из важных элементов HTML и предназначен для создания ссылок HTML",
+        attribute : [
+            {titleOfAttr: 'accesskey', actionOfAttr: 'Активация ссылки с помощью комбинации клавиш'},
+            {titleOfAttr: 'coords', actionOfAttr: 'Устанавливает координаты активной области'},
+            {titleOfAttr: 'download', actionOfAttr: 'Предлагает скачать указанный по ссылке файл'},
+            {titleOfAttr: 'href', actionOfAttr: 'Задает адрес документа, на который следует перейти'},
+            {titleOfAttr: 'hreflang', actionOfAttr: 'Идентифицирует язык текста по ссылке'},
+            {titleOfAttr: 'name', actionOfAttr: 'Устанавливает имя якоря внутри документа'},
+            {titleOfAttr: 'rel', actionOfAttr: 'Отношения между ссылаемым и текущим документами'},
+            {titleOfAttr: 'rev', actionOfAttr: 'Отношения между текущим и ссылаемым документами'},
+            {titleOfAttr: 'shape', actionOfAttr: 'Задает форму активной области ссылки для изображений'},
+            {titleOfAttr: 'tabindex', actionOfAttr: 'Определяет последовательность перехода между ссылками при нажатии на кнопку Tab'},
+            {titleOfAttr: 'target', actionOfAttr: 'Имя окна или фрейма, куда браузер будет загружать документ.'},
+            {titleOfAttr: 'title', actionOfAttr: 'Добавляет всплывающую подсказку к тексту ссылки'},
+            {titleOfAttr: 'type', actionOfAttr: 'Указывает MIME-тип документа, на который ведёт ссылка.'}
+        ]
+    };
+    console.log('a:',aTag);
+
+    let divTag = {
+        titleOfTag: 'div',
+        action: "Элемент <div> является блочным элементом и предназначен для выделения фрагмента документа с целью изменения вида содержимого",
+        attribute : [
+            {titleOfAttr: 'align', actionOfAttr: 'Задает выравнивание содержимого тега <div>'},
+            {titleOfAttr: 'title', actionOfAttr: 'Добавляет всплывающую подсказку к содержимому'}
+        ]
+    };
+    console.log('div:', divTag);
+
+    let h1Tag = {
+        titleOfTag: 'h1',
+        action: "HTML предлагает шесть заголовков разного уровня, которые показывают относительную важность секции, расположенной после заголовка",
+        attribute : [
+            {titleOfAttr: 'align', actionOfAttr: 'Определяет выравнивание заголовка'}
+        ]
+    };
+    console.log('h1:',h1Tag);
+
+    let spanTag = {
+        titleOfTag: 'span',
+        action: "Тег <span> предназначен для определения строчных элементов документа",
+        attribute : [
+            {titleOfAttr: 'no', actionOfAttr: 'Для этого тега доступны универсальные атрибуты'}
+        ]
+    };
+    console.log('span:', spanTag);
+
+    let inputTag = {
+        titleOfTag: 'input',
+        action: "Тег <input> является одним из разносторонних элементов формы и позволяет создавать разные элементы интерфейса и обеспечить взаимодействие с пользователем",
+        attribute : [
+            {titleOfAttr: 'accept', actionOfAttr: 'Устанавливает фильтр на типы файлов, которые вы можете отправить через поле загрузки файлов.'},
+            {titleOfAttr: 'accesskey', actionOfAttr: 'Переход к элементу с помощью комбинации клавиш.'},
+            {titleOfAttr: 'align', actionOfAttr: 'Определяет выравнивание изображения.'},
+            {titleOfAttr: 'alt', actionOfAttr: 'Альтернативный текст для кнопки с изображением.'},
+            {titleOfAttr: 'autocomplete', actionOfAttr: 'Включает или отключает автозаполнение.'},
+            {titleOfAttr: 'autofocus', actionOfAttr: 'Устанавливает фокус в поле формы.'},
+            {titleOfAttr: 'border', actionOfAttr: 'Толщина рамки вокруг изображения.'},
+            {titleOfAttr: 'checked', actionOfAttr: 'Предварительно активированный переключатель или флажок.'},
+            {titleOfAttr: 'disabled', actionOfAttr: 'Блокирует доступ и изменение элемента.'},
+            {titleOfAttr: 'form', actionOfAttr: 'Связывает поле с формой по её идентификатору.'},
+            {titleOfAttr: 'formaction', actionOfAttr: 'Определяет адрес обработчика формы.'},
+            {titleOfAttr: 'formenctype', actionOfAttr: 'Устанавливает способ кодирования данных формы при их отправке на сервер.'},
+            {titleOfAttr: 'formmethod', actionOfAttr: 'Сообщает браузеру каким методом следует передавать данные формы на сервер.'},
+            {titleOfAttr: 'formnovalidate', actionOfAttr: 'Отменяет встроенную проверку данных на корректность.'},
+            {titleOfAttr: 'formtarget', actionOfAttr: 'Определяет окно или фрейм в которое будет загружаться результат, возвращаемый обработчиком формы.'},
+            {titleOfAttr: 'list', actionOfAttr: 'Указывает на список вариантов, которые можно выбирать при вводе текста.'},
+            {titleOfAttr: 'max', actionOfAttr: 'Верхнее значение для ввода числа или даты.'},
+            {titleOfAttr: 'maxlength', actionOfAttr: 'Максимальное количество символов разрешенных в тексте.'},
+            {titleOfAttr: 'min', actionOfAttr: 'Нижнее значение для ввода числа или даты.'},
+            {titleOfAttr: 'multiple', actionOfAttr: 'Позволяет загрузить несколько файлов одновременно.'},
+            {titleOfAttr: 'name', actionOfAttr: 'Имя поля, предназначено для того, чтобы обработчик формы мог его идентифицировать.'},
+            {titleOfAttr: 'pattern', actionOfAttr: 'Устанавливает шаблон ввода.'},
+            {titleOfAttr: 'placeholder', actionOfAttr: 'Выводит подсказывающий текст.'},
+            {titleOfAttr: 'readonly', actionOfAttr: 'Устанавливает, что поле не может изменяться пользователем.'},
+            {titleOfAttr: 'required', actionOfAttr: 'Обязательное для заполнения поле.'},
+            {titleOfAttr: 'size', actionOfAttr: 'Ширина текстового поля.'},
+            {titleOfAttr: 'src', actionOfAttr: 'Адрес графического файла для поля с изображением.'},
+            {titleOfAttr: 'step', actionOfAttr: 'Шаг приращения для числовых полей.'},
+            {titleOfAttr: 'tabindex', actionOfAttr: 'Определяет порядок перехода между элементами с помощью клавиши Tab.'},
+            {titleOfAttr: 'type', actionOfAttr: 'Сообщает браузеру, к какому типу относится элемент формы.'},
+            {titleOfAttr: 'value', actionOfAttr: 'Значение элемента.'}
+        ]
+    };
+    console.log('input:', inputTag);
+
+    let formTag = {
+        titleOfTag: 'form',
+        action: "Связывает поле с формой по её идентификатору",
+        attribute : [
+            {titleOfAttr: 'no', actionOfAttr: 'Нет'},
+        ]
+    };
+    console.log('form: ', formTag);
+
+    let optionTag = {
+        titleOfTag: 'option',
+        action: "Тег <option> определяет отдельные пункты списка, создаваемого с помощью контейнера <select>",
+        attribute : [
+            {titleOfAttr: 'disabled', actionOfAttr: 'Заблокировать для доступа элемент списка.'},
+            {titleOfAttr: 'label', actionOfAttr: 'Указание метки пункта списка.'},
+            {titleOfAttr: 'selected', actionOfAttr: 'Заранее устанавливает определенный пункт списка выделенным.'},
+            {titleOfAttr: 'value', actionOfAttr: 'Значение пункта списка, которое будет отправлено на сервер или прочитано с помощью скриптов.'}
+        ]
+    };
+    console.log('option: ', optionTag);
+
+    let selectTag = {
+        titleOfTag: 'select',
+        action: "Тег <select> позволяет создать элемент интерфейса в виде раскрывающегося списка, а также список с одним или множественным выбором, как показано далее",
+        attribute : [
+            {titleOfAttr: 'accesskey', actionOfAttr: 'Позволяет перейти к списку с помощью некоторого сочетания клавиш.'},
+            {titleOfAttr: 'autofocus', actionOfAttr: 'Устанавливает, что список получает фокус после загрузки страницы.'},
+            {titleOfAttr: 'disabled', actionOfAttr: 'Заранее устанавливает определенный пункт списка выделенным.'},
+            {titleOfAttr: 'form', actionOfAttr: 'Связывает список с формой.'},
+            {titleOfAttr: 'multiple', actionOfAttr: 'Позволяет одновременно выбирать сразу несколько элементов списка.'},
+            {titleOfAttr: 'name', actionOfAttr: 'Имя элемента для отправки на сервер или обращения через скрипты.'},
+            {titleOfAttr: 'required', actionOfAttr: 'Список обязателен для выбора перед отправкой формы.'},
+            {titleOfAttr: 'size', actionOfAttr: 'Количество отображаемых строк списка.'},
+            {titleOfAttr: 'tabindex', actionOfAttr: 'Определяет последовательность перехода между элементами при нажатии на клавишу Tab'}        
+        ]
+    };
+    console.log('select: ', selectTag);
+
+
+</script>

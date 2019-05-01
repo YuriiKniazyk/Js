@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <DIV>
+        <p id="p1">fsdf</p>
+        <input  id="input"  />
+    </DIV>
+</body>
+</html>
+<script>
+    function number(){
+        let num = 0;
+        return function(){
+            return num++;
+        }
+    };
+
+    let myNumber = number();
+
+    myNumber();
+    myNumber();
+    myNumber();
+    console.log(myNumber);
+    console.log('myNumber:',myNumber());
+
+    console.log('');
+
+    function multiply(a){
+        return function(b){
+            return a * b;
+        }
+    };
+
+    let multiplyByTwo = multiply(2);
+    console.log('multiplyByTwo:',multiplyByTwo(5));
+    console.log('multiplyByTwo:',multiplyByTwo(10));
+
+    multiplyByTree = multiply(3);
+    console.log('multiplyByTree',multiplyByTree(4));
+
+    console.log('');
+
+    let user = (function(){
+        let name = 'Me';
+
+        function getName(){
+            return name;
+        };
+
+        function setName(value){
+            name = value;
+        };
+
+        return {
+            getName : getName,
+            setName : setName
+        };
+    })();
+
+    console.log('Name', user.getName());
+    user.setName('Natalia');
+    console.log('Name', user.getName());
+
+    console.log('');
+
+    let counter = (function(){
+        let num = 0;
+
+        function increment(){
+           return num++;
+        };
+
+        function decrement(){
+            return num--;
+        };
+
+        function getNum(){
+            return num;
+        };
+
+        function setNum(value){
+            num = value;
+        }
+        return {
+            increment: increment,
+            decrement: decrement,
+            getNum: getNum,
+            setNum: setNum
+        };
+    })();
+
+    console.log('num: ',counter.getNum());
+    
+    counter.increment();
+    console.log('num Increment',counter.getNum());
+
+    counter.decrement();
+    console.log('num Decrement',counter.getNum());
+
+    counter.decrement();
+    console.log('num Decrement',counter.getNum());
+
+    counter.setNum(5);
+    console.log('num setNum',counter.getNum());
+
+    counter.increment();
+    console.log('num Increment',counter.getNum());
+
+
+let input = document.getElementById('input');
+input.addEventListener('change', (event) => console.log(event.target.value))
+    
+</script>
