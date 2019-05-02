@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="get_user">Get Users</button>
+    <div id="insert_user"></div>
+
+</body>
+</html>
+<script>
+    const getUser = document.querySelector('#get_user');
+    const insertUser = document.querySelector('#insert_user');
+
+    async function getDataUser(){
+        
+        let respons = await fetch('https://jsonplaceholder.typicode.com/users');
+        let parsed = await respons.json();
+
+        return parsed;
+    }
+
+    getUser.onclick = async function(){
+        let data = await getDataUser();
+        insertUser.innerHTML = ' ';
+        for(const datum of data){
+            let htmldiv = document.createElement('div',);
+            let moreButton = document.createElement('button');
+
+            moreButton.innerText = 'See more info...';
+            htmldiv.innerText = `${datum.id}. ${datum.name}`;
+
+            insertUser.appendChild(htmldiv);
+            htmldiv.appendChild(moreButton);
+
+            htmldiv.style.backgroundColor = 'lightseagreen';
+            htmldiv.style.margin = '20px';
+            moreButton.style.margin = '10px';
+        }
+    }
+
+        
+
+    // const button = document.getElementById('btn');
+
+    // button.onclick = () => {
+    //     fetch('https://jsonplaceholder.typicode.com/users')
+    //         .then(users => {
+    //             return users.json()
+    //         })
+    //         .then(jsonUsers => {
+    //             divBuilder(jsonUsers)
+    //         })
+    //         .catch(reason => {
+    //             console.log(reason);
+    //         })
+    // }
+
+    // function divBuilder(usersArr) {
+    //     for (let i = 0; i < usersArr.length; i++) {
+    //         let userDiv = document.createElement('div');
+    //         let getMoreInfoBtn = document.createElement('button');
+
+    //         userDiv.innerText = `${usersArr[i].id} ${usersArr[i].name}`;
+    //         getMoreInfoBtn.innerText = 'See more...';
+
+    //         userDiv.style.backgroundColor = 'lightseagreen';
+    //         userDiv.style.margin = '20px';
+    //         getMoreInfoBtn.style.margin = '10px';
+
+    //         document.body.appendChild(userDiv);
+    //         userDiv.appendChild(getMoreInfoBtn);
+
+    //         getMoreInfoBtn.onclick = () => {
+    //             getUserById(usersArr[i].id)
+    //         }
+    //     }
+    // }
+
+    // function getUserById(userId) {
+    //     fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+    //         .then(user => {
+    //             console.log(user);
+    //             return user.json()
+    //         })
+    //         .then(jsonUser => {
+    //             fullUserBuilder(jsonUser)
+    //         })
+    // }
+
+    // function fullUserBuilder(user) {
+    //     let fullInfo = document.createElement('div');
+    //     fullInfo.innerText = `${user.email} ${user.id}`;
+    //     fullInfo.style.backgroundColor = 'green';
+    //     fullInfo.style.margin = '40px';
+    //     document.body.appendChild(fullInfo)
+    // }
+
+    
+
+
+</script>

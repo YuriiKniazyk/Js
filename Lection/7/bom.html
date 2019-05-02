@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 500px;
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+        p {
+            font-style: italic;
+            font-size: 30px;
+            color: red;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p>Task1</p>
+    <form action="textSave">
+        <textarea name="textArea" id="Areatext" cols="50" rows="10"></textarea>
+    </form>
+
+    <div class="container">
+        <p>Task2</p>
+        <form id="formic">
+            <div class="form-group">
+                <label for="myName">My name</label>
+                <input type="text" class="form-control" id="myName" aria-describedby="emailHelp" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="myAddress">My Address</label>
+                <input type="text" class="form-control" id="myAddress" placeholder="Enter address">
+            </div>
+            <div class="form-group">
+                <label for="myText">My Text</label>
+                <textarea name="" id="myText" cols="30" rows="5" class="form-control"></textarea>
+            </div>
+            <div>
+                <input type="checkbox" id="myCheck" name="scales">
+                <label for="myCheck">My check</label>
+            </div>
+            <div>
+                <input type="radio" id="myRadio" name="scales">
+                <label for="myRadio">My radio</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    
+    <p>Task3</p>
+    <form action="textChange">
+        <textarea name="changeform" id="changef" cols="30" rows="10"></textarea>
+        <button id="left" type="button">Left</button>
+        <button id="right" type="button">Right</button>
+    </form>
+    
+
+</body>
+</html>
+<script>
+    //Task1
+    let textArea = document.querySelector('#Areatext');
+
+    textArea.onchange = () =>{
+        let textAreaValue = textArea.value;
+        localStorage['textAreaValue'] = textAreaValue;
+    };
+
+    if (localStorage['textAreaValue'] != undefined){
+        textArea.value = localStorage['textAreaValue'];
+        console.log(localStorage['textAreaValue']);
+    }
+    
+    //Task2
+    let myName = document.querySelector('#myName');
+    let myAddress = document.querySelector('#myAddress');
+    let form = document.querySelector('#formic');
+    let myText = document.querySelector('#myText');
+    let myCheck = document.querySelector('#myCheck');
+    let myRadio = document.querySelector('#myRadio');
+
+    function check() {
+        document.getElementById("myCheck").checked = true;
+    }
+
+    function uncheck() {
+        document.getElementById("myCheck").checked = false;
+    }
+    
+    form.addEventListener('submit', (e) =>{
+        e.preventDefault();
+
+        let obj = {
+            Name: myName.value,
+            Address: myAddress.value,
+            Text: myText.value,
+            Check: myCheck.value,
+            Radio: myRadio.value
+        };
+        
+        window.localStorage.setItem('obj', JSON.stringify(obj));
+        
+    });
+
+    let localData = JSON.parse(localStorage.getItem('obj'));
+    
+    localData && localData.Name ? myName.value = localData.Name : myName.value = null;
+    localData && localData.Address ? myAddress.value = localData.Address : myAddress.value = null;
+    localData && localData.Text ? myText.value = localData.Text : myText.value = null;
+    localData && localData.Check ? myCheck.value = localData.Check : myCheck.value = null;
+    localData && localData.Radio ? myRadio.value = localData.Radio : myRadio.value = null;
+
+/////////Task3    
+    let changeform = document.querySelector('#changef');
+    
+    changeform.onchange = () =>{
+        let str = localStorage.getItem('changeformValue');
+        let arr = [];
+
+        if(str != undefined){
+            arr = JSON.parse(str);
+        }
+        arr.push(changeform.value);      
+        localStorage.setItem('changeformValue',JSON.stringify(arr));
+        let try1 = arr.length - 1;
+        localStorage.setItem('changeformindex',try1.toString());
+    };
+    
+    document.getElementById('left').onclick = () =>{
+        //зчитуємо з storag changeformindex
+        let write = localStorage.getItem('changeformindex')
+        //переводимо значення changeformindex в число
+        let index = parseInt(write,0);
+        index--;
+        //зчитуємо масив з storage
+        let arr1 = localStorage.getItem('changeformValue'); 
+        //parse string to obj (json)
+        let arr2 = JSON.parse(arr1);
+        if (index < 0){
+            index = arr2.length -1;
+        }
+        //беремо елемент з масиву по індексу
+        let curentItem = arr2[index];
+        //присвоюємо changeform.value значення яке ми прочитали з масиву у поле 
+        changeform.value = curentItem;
+        localStorage.setItem('changeformindex',index.toString());
+    }
+
+    document.getElementById('right').onclick = () =>{
+        //зчитуємо з storag changeformindex
+        let write = localStorage.getItem('changeformindex')
+        //переводимо значення changeformindex в число
+        let index = parseInt(write,0);
+        index++;
+        //зчитуємо масив з storage
+        let arr1 = localStorage.getItem('changeformValue'); 
+        //parse string to obj (json)
+        let arr2 = JSON.parse(arr1);
+        if (index >= arr2.length){
+            index = 0;
+        }
+        //беремо елемент з масиву по індексу
+        let curentItem = arr2[index];
+        //присвоюємо changeform.value значення яке ми прочитали з масиву у поле 
+        changeform.value = curentItem;
+        localStorage.setItem('changeformindex',index.toString());   
+    }
+
+
+</script>
